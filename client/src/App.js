@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path="/cart" element={<Cart/>} />
+          <Route path="/cart" exact element={<Cart/>} />
           <Route path="/not-found" element={<NotFound/>} />
           <Route path="/" exact element={<Home/>} />
           <Route to="/not-found" />
