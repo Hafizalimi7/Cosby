@@ -5,11 +5,16 @@ import App from './App';
 import { configureStore } from "@reduxjs/toolkit"
 import { Provider } from "react-redux"
 
-import productReducer, { productsFetch } from './features/productSlice';
+import productReducer, { productsFetch } from './features/productsSlice';
+import { productsApi } from './features/productsApi';
 
 const store = configureStore({
   reducer:{
     products: productReducer,
+    [productsApi.reducerPath]: productsApi.reducer,
+  },
+  midddleware: (getDefaultMiddleware) =>{
+    return getDefaultMiddleware().concat(productsApi.middleware)
   }
 })
 
