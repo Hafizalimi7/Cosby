@@ -8,7 +8,7 @@ const Home = () => {
     { isLoading ? (
       <p>"loading..</p> 
     ): error ?(
-      <p>An error occured..</p>
+      <p>An error occured while trying to load...</p>
     ) : (
       <>
         <h2>New Arrivals</h2>
