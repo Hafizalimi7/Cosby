@@ -1,8 +1,9 @@
 # Getting Started with Create React App
 
 # Used
-https://icons.getbootstrap.com/icons
+https://icons.getbootstrap.com/
 https://fonts.google.com/specimen/Nunito?query=nunito
+https://cloudinary.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
