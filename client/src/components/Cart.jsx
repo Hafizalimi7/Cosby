@@ -7,7 +7,7 @@ const Cart = () => {
     <h2>Shopping Cart</h2>
     { cart.cartItems.length === 0 ? (
       <div className="cart-empty">
-        <p>Your Cart is Currrently Empty</p>
+        <p>Your Cart is Currrently Empty..</p>
         <div className="start-shopping">
           <Link to="/">
             <svg 
