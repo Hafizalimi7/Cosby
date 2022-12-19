@@ -14,12 +14,12 @@ function App() {
     <div className="App">
       <BrowserRouter> 
       <ToastContainer />
-        <NavBar/>
-        <Routes>
-          <Route path="/cart" exact element={<Cart/>} />
-          <Route path="/not-found" element={<NotFound/>} />
-          <Route path="/" exact element={<Home/>} />
-          <Route to="/not-found" />
+        <NavBar/> {/* navbar in each screen*/}
+        <Routes>{/*allows us to route each route at a time*/}
+          <Route path="/cart" exact element={<Cart/>} /> {/*cart page*/}
+          <Route path="/not-found" element={<NotFound/>} /> {/*not found page*/}
+          <Route path="/" exact element={<Home/>} /> {/*exact goes to the exact route*/}
+          <Route to="/not-found" /> {/*redirects to not-found when entered invialed url*/}
         </Routes>
       </BrowserRouter>
     </div>

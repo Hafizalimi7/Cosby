@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 const Navbar = () => {
   return ( <nav className="nav-bar">
-      <Link to="/">
+      <Link to="/"> {/*link to home page*/}
         <h2>OnlineShop</h2>
       </Link>
-      <Link to="/cart">
+      <Link to="/cart"> {/*link to cart*/}
         <div className="nav bar">
           <svg 
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ const Navbar = () => {
             12.64 5H11v1.5a.5.5 0 0 1-1 0V5H6v1.5a.5.5 0 0 1-1 0V5z"/>
           </svg>
           <span className="bag-quantity">
-            <span>3</span>
+            <span>3</span>{/*quantity on items in bag icon*/}
           </span>
         </div>
       </Link>

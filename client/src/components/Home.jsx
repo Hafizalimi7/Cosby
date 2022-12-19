@@ -11,15 +11,15 @@ const Home = () => {
   const navigate = useNavigate()
 
   const handleAddToCart = ( product) =>{
-    dispatch(addToCart(product));
-    navigate("/cart")
+    dispatch(addToCart(product));//
+    navigate("/cart")//when add to cart is pressed it go directly to cart page
   }
 
   return <div className="home-container">
     { isLoading ? (
-      <p>loading..</p> 
+      <p>loading..</p>//when page is loading
     ): error ? (
-      <p>An error occured..</p>
+      <p>An error occured..</p>//*when an error accurs it says this <<
     ) : (
       <>
         <h2>New Arrivals</h2>

@@ -6,23 +6,22 @@ const Cart = () => {
   const dispatch = useDispatch()
 
   const handleRemoveFromCart = (cartItem) => {
-    dispatch(removeFromCart(cartItem));
+    dispatch(removeFromCart(cartItem));{/*removes item from cart*/}
   }
 
   const handleDecreaseCart = (cartItem) => {
-    dispatch(decreaseCart(cartItem))
+    dispatch(decreaseCart(cartItem));{/*decrease item amount*/}
   }
 
   const handleIncreaseCart = (cartItem) => {
-    console.log(cartItem)
-    dispatch(addToCart(cartItem))
+    dispatch(addToCart(cartItem));{/*increase item amount*/}
   }
   return (
     <div className="cart-container">
     <h2>Shopping Cart</h2>
     { cart.cartItems.length === 0 ? (
       <div className="cart-empty">
-        <p>Your Cart is Currrently Empty..</p>
+        <p>Your Cart is Currrently Empty..</p>{/*if cart is empty is displays this <<*/}
         <div className="start-shopping">
           <Link to="/">
             <svg 
@@ -55,21 +54,21 @@ const Cart = () => {
           {cart.cartItems?.map(cartItem => (
             <div className="cart-item" key={cartItem.id}>
               <div className="cart-product">
-                <img src={cartItem.image} alt={cartItem.name} />
+                <img src={cartItem.image} alt={cartItem.name} />{/*display image of item and name*/}
                 <div>
                   <h3>{cartItem.name}</h3>
-                  <p>{cartItem.desc}</p>
+                  <p>{cartItem.desc}</p>{/*displays discription of item*/}
                   <button onClick={() => handleRemoveFromCart(cartItem)}>Remove</button>
                 </div>
               </div>
-              <div className="cart-product-price">£{cartItem.price}</div>
+              <div className="cart-product-price">£{cartItem.price}</div>{/*shows price of item*/}
               <div className="cart-product-quantity">
                 <button onClick={() => handleDecreaseCart(cartItem)}>-</button>
                 <div className="count">{cartItem.cartQuantity}</div>
                 <button onClick={() => handleIncreaseCart(cartItem)}>+</button>
               </div>
               <div className="cart-product-total-price">
-                £{cartItem.price * cartItem.cartQuantity}
+                £{cartItem.price * cartItem.cartQuantity}{/*total of item*/}
               </div>
             </div>
           ))}

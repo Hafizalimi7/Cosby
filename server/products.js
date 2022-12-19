@@ -14,7 +14,7 @@ const products = [
     image: "https://res.cloudinary.com/dutdz0yxy/image/upload/v1669731083/online-shop/iphone12_wtkhgo.jpg"  
   },
   {
-    id:2,
+    id:3,
     name: "galaxy s",
     desc: "6.5-inch display",
     price: 999,
