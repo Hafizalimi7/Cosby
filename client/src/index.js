@@ -17,7 +17,7 @@ const store = configureStore({//combines different reducers and also automaticly
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware),
+    getDefaultMiddleware().concat(productsApi.middleware),//add more api funtionality like cashing
 });
 
 

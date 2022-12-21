@@ -11,7 +11,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   const handleAddToCart = ( product) =>{
-    dispatch(addToCart(product));//
+    dispatch(addToCart(product));//this gets represents action.payload in cartSlice.js
     navigate("/cart")//when add to cart is pressed it go directly to cart page
   }
 
