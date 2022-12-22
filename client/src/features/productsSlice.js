@@ -26,9 +26,8 @@ const productsSlice = createSlice({//contain reducers and actions
     },
     [productsFetch.fulfilled]: (state, action) => {
       state.items = action.payload;//access data from payload(productsFetch)
-      console.log(state.items)
       state.status = "success";//when recieved data sucessful
-      console.log(state.status)
+      
     },
     [productsFetch.rejected]: (state, action) => {
       state.status = "rejected";//shows rejected when doesnt get response

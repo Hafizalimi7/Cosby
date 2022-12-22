@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter> 
-      <ToastContainer />
+      <ToastContainer />{/*no be able to add toast messages*/}
         <NavBar/> {/* navbar in each screen*/}
         <Routes>{/*allows us to route each route at a time*/}
           <Route path="/cart" exact element={<Cart/>} /> {/*cart page*/}
