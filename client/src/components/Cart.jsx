@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-import { addToCart, decreaseCart, removeFromCart } from "../features/cartSlice";
+import { addToCart, clearCart, decreaseCart, removeFromCart } from "../features/cartSlice";
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);//access to items
+  
   const dispatch = useDispatch()
 
   const handleRemoveFromCart = (cartItem) => {
@@ -16,6 +17,11 @@ const Cart = () => {
   const handleIncreaseCart = (cartItem) => {
     dispatch(addToCart(cartItem));{/*increase item amount*/}
   }
+
+  const handleClearCart = () => {
+    dispatch(clearCart());{/*clears cart*/}
+  }
+
   return (
     <div className="cart-container">
     <h2>Shopping Cart</h2>
@@ -51,7 +57,7 @@ const Cart = () => {
           <h3 className="total">Total</h3>
         </div>
         <div className="cart-items">
-          {cart.cartItems?.map(cartItem => (
+          {cart.cartItems?.map(cartItem => (//looping threw cartItems array
             <div className="cart-item" key={cartItem.id}>
               <div className="cart-product">
                 <img src={cartItem.image} alt={cartItem.name} />{/*display image of item and name*/}
@@ -74,7 +80,7 @@ const Cart = () => {
           ))}
         </div>
         <div className="cart-summary">
-          <button className="clear-cart">Clear Cart</button>
+          <button onClick={() => handleClearCart()} className="clear-cart">Clear Cart</button>
           <div className="cart-checkout">
             <div className="subtotal">
               <span>Subtotal</span>
