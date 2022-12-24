@@ -8,7 +8,7 @@ import { Provider } from "react-redux"
 
 import productsReducer, { productsFetch } from './features/productsSlice';
 import { productsApi } from './features/productsApi';
-import cartReducer from './features/cartSlice';
+import cartReducer, { getTotals } from './features/cartSlice';
 
 const store = configureStore({//combines different reducers and also automaticly configure redux dev tools
   reducer: {
@@ -22,6 +22,7 @@ const store = configureStore({//combines different reducers and also automaticly
 
 
 store.dispatch(productsFetch())//dispatches action creator which will trigger createAsyncThunk to do the heavy lifting
+store.dispatch(getTotals());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
