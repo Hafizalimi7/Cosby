@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-import { addToCart, clearCart, decreaseCart, removeFromCart } from "../features/cartSlice";
+import { addToCart, clearCart, decreaseCart, getTotals, removeFromCart } from "../features/cartSlice";
 
 
 const Cart = () => {
@@ -9,9 +9,9 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);//access to items
   const dispatch = useDispatch()
   
-  useEffect(() => {
-
-  }, [cart])//will be called when the cart state chages
+  useEffect(() => {//this will be called when the components renders
+    dispatch(getTotals())
+  }, [cart, dispatch])//will be called when the cart state chages
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));{/*removes item from cart*/}

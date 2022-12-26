@@ -22,7 +22,7 @@ const store = configureStore({//combines different reducers and also automaticly
 
 
 store.dispatch(productsFetch())//dispatches action creator which will trigger createAsyncThunk to do the heavy lifting
-store.dispatch(getTotals());
+store.dispatch(getTotals());//when the application loads it will dispatch getTotals
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
