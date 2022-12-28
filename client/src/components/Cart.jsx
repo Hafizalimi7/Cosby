@@ -29,6 +29,10 @@ const Cart = () => {
     dispatch(clearCart());{/*clears cart*/}
   }
 
+  // const handleGetName = () => {
+  //   dispatch(getNames());
+  // }
+
   return (
     <div className="cart-container">
     <h2>Shopping Cart</h2>
@@ -95,6 +99,7 @@ const Cart = () => {
             </div>
             <p>Taxes and shipping calculated</p>
             <button>Checkout</button>
+            {/* <button onClick={() => handleGetName()}>{cart.cartItems[0].name}</button> */}
             <div className="contiue-shooping">
           <Link to="/">
             <svg 

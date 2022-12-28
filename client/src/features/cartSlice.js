@@ -6,8 +6,10 @@ const initialState = {
   ? JSON.parse(localStorage.getItem("cartItems")) 
   : [],//checks if item exist in localStorage if it doesn't default is epmty array
   cartTotalQuantity: 0,
-  cartTotalAmount: 0
+  cartTotalAmount: 0,
+  emptyBasket: []
 }
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -88,7 +90,7 @@ const cartSlice = createSlice({
         cartTotal.total += itemTotal;//storing itemTotal in cartTotal total in total
         cartTotal.quantity += cartQuantity;//this would give the total cart quantity
 
-        console.log(cartTotal)
+        // console.log(cartTotal)
 
         return cartTotal;
       }, 
@@ -101,10 +103,23 @@ const cartSlice = createSlice({
      state.cartTotalAmount = total;
      state.cartTotalQuantity = quantity;
      
-    }
+    },
+    // getNames(state, action){
+    //   // const existingIndex = state.cartItems.findIndex(//findIndex checks if we already have that item
+    //   //   (item) => item.id === action.payload.id//checks if item in the cart exists
+    //   // );
+
+    //   // console.log(existingIndex.push("hello"))
+
+    //   console.log("hello")
+
+    //   toast.success(`${action.payload.name} removed from cart`, {
+    //     position: "bottom-left",
+    //   });
+    // },
   },
 });
 
-export const {addToCart, removeFromCart, decreaseCart, clearCart, getTotals } = cartSlice.actions;
+export const {addToCart, removeFromCart, decreaseCart, clearCart, getTotals} = cartSlice.actions;
 
 export default cartSlice.reducer;
