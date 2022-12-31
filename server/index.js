@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require("cors")//cors relaxs the security applied to an API
 const mongoose = require("mongoose")
 const register  = require("./routes/register")
+const login  = require("./routes/login")
 
 
 const product = require("./products")//from product file
@@ -13,6 +14,7 @@ require("dotenv").config()
 app.use(express.json())//configuring a middleware , inccrease the functionailty
 app.use(cors())//allows to access to nodejs api from react application
 app.use("/api/register", register);
+app.use("/api/login", login);
 
 app.get("/", (req,res) => {//res is whats coming in from the frontend and res is what gives out from an api
   res.send("welcome to the backend")//shows on the browser
