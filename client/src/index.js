@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import App from './App';
 
-import { configureStore } from "@reduxjs/toolkit"
 import { Provider } from "react-redux"
+import { configureStore } from "@reduxjs/toolkit"
 
-import productsReducer, { productsFetch } from './features/productsSlice';
-import { productsApi } from './features/productsApi';
-import cartReducer, { getTotals } from './features/cartSlice';
+import productsReducer, { productsFetch } from './slices/productsSlice';
+import cartReducer, { getTotals } from './slices/cartSlice';
+import { productsApi } from './slices/productsApi';
+import authReducer from './slices/authSlice';
 
 const store = configureStore({//combines different reducers and also automaticly configure redux dev tools
   reducer: {
     products: productsReducer,
     cart: cartReducer,
+    auth: authReducer,
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

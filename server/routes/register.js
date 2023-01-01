@@ -19,8 +19,6 @@ router.post("/", async (req, res) => {//validating data
   let user = await User.findOne({ email: req.body.email });//checks if user exist
   if (user) return res.status(400).send("User already exists...");
 
-  console.log("here");
-
   const { name, email, password } = req.body;
 
   user = new User({ name, email, password });//creates new user if user dont exists
