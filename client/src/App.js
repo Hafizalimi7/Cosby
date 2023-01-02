@@ -21,7 +21,7 @@ function App() {
           <Routes>{/*allows us to route each route at a time*/}
             <Route path="/" exact element={<Home/>} /> {/*exact goes to the exact route*/}
             <Route path="/cart" exact element={<Cart/>} /> {/*cart page*/}
-            <Route path="/register" exact element={<Register/>} />
+            <Route path="/register" element={<Register/>} />
             <Route path="/not-found" element={<NotFound/>} /> {/*not found page*/}
             <Route to="/not-found" /> {/*redirects to not-found when entered invialed url*/}
           </Routes>
