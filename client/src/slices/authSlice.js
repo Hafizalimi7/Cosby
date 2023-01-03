@@ -35,6 +35,24 @@ export const registerUser = createAsyncThunk(
   }
 );
 
+export const loginUser = createAsyncThunk(
+  "auth/loginUser",
+  async (values, { rejectWithValue }) => {
+    try {
+      const token = await axios.post(`${url}/login`, {
+        email: values.email,
+        password: values.password,
+      });
+
+      localStorage.setItem("token", token.data);
+
+      return token.data;
+    } catch (error) {
+      console.log(error.response.data);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 
 const authSlice = createSlice({
   name: "auth",
@@ -90,13 +108,38 @@ const authSlice = createSlice({
           _id: user._id,
           registerStatus: "success"
         };
-      }else return state;;
+      }else return state;
     });
     builder.addCase(registerUser.rejected, (state, action) => {//when error occcurs
       return {
         ...state, 
         registerStatus: "rejected",
         registerError: action.payload,
+      }
+    });
+    builder.addCase(loginUser.pending, (state, action) => {//when making a request to the backend
+      return {...state, registerStatus: "pending"};
+    });
+    builder.addCase(loginUser.fulfilled, (state, action) => {//when got data from backend
+      if(action.payload){
+
+        const user = jwtDecode(action.payload);//stores data
+
+        return{
+          ...state, 
+          token: action.payload,
+          name: user.name,
+          email: user.email,
+          _id: user._id,
+          registerStatus: "success"
+        };
+      }else return state;
+    });
+    builder.addCase(loginUser.rejected, (state, action) => {//when error occcurs
+      return {
+        ...state, 
+        loginStatus: "rejected",
+        loginError: action.payload,
       }
     });
   },

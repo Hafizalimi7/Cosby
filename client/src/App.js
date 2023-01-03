@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
 import Cart from "./components/Cart";
 import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" exact element={<Home/>} /> {/*exact goes to the exact route*/}
             <Route path="/cart" exact element={<Cart/>} /> {/*cart page*/}
             <Route path="/register" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/not-found" element={<NotFound/>} /> {/*not found page*/}
             <Route to="/not-found" /> {/*redirects to not-found when entered invialed url*/}
           </Routes>
