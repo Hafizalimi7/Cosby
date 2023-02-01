@@ -1,3 +1,13 @@
+# Online Shop
+
+Shopping Cart
+
+- can register user
+- user can login
+- can buy items
+- can add items in cart
+- can buy more than one items
+- can remove item from basket
 # Getting Started with Create React App
 
 # Used
