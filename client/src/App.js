@@ -20,7 +20,6 @@ function App() {
       <ToastContainer />{/*no be able to add toast messages*/}
         <NavBar/> {/* navbar in each screen*/}
         <div className='content-container'>
-          
           <Routes>{/*allows us to route each route at a time*/}
             <Route path="/" exact element={<Home/>} /> {/*exact goes to the exact route*/}
             <Route path="/cart" exact element={<Cart/>} /> {/*cart page*/}
