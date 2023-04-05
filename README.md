@@ -1,4 +1,7 @@
-# Online Shop
+# E Commerce Website
+
+
+# Things User Can Do
 
 - user can see items available
 - user can register user
@@ -18,14 +21,12 @@ Steps
 4. cd into server run npm install to get all dependencies
 5. While in server folder run npx nodemon to load up backend server
 
-
-# Getting Started with Create React App
-
 # Tools Used
 
 - Stripe Payment
 - redux
-- https://icons.getbootstrap.com/https://fonts.google.com/specimen/Nunito?query=nunitohttps://cloudinary.com/
+- getbootstrap
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
